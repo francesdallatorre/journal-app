@@ -9,10 +9,14 @@ const PORT = process.env.PORT
 const mongodbURI = process.env.MONGODBURI
 
 // Controllers
+const entriesController = require('./controllers/entries.js');
 
 // Middleware to help with form submission
 APP.use(express.urlencoded({ extended: true }));
 APP.use(methodOverride('_method'));
+
+// Register controllers on their routes
+APP.use('/entries', entriesController);
 
 // Mongoose connection
 mongoose.connect(`${mongodbURI}`, {

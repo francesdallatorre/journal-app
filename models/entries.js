@@ -3,8 +3,10 @@ const mongoose = require('mongoose');
 const entrySchema = new mongoose.Schema({
     title: { type: String, required: true },
     entry: { type: String, required: true },
-    date: { type: Date, default: Date.now }
+    date: { type: Date, default: Date.now },
+    emoji: String,
+    image: String
 })
 const Entry = mongoose.model('Entry', entrySchema);
 
-modules.exports = Entry
+module.exports = Entry

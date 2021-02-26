@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal</title>
+</head>
+<body>
+    <% let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }%>
+    <nav>
+        <h5>this are is going to be a navigation</h5>
+        <h6><%= new Date().toLocaleDateString('en-US', options) %></h6>
+    </nav>
+<div>
+    <h3>All Entries</h3>
+   <a href="/entries/new">Add</a>
+</div>
+
+<div>
+    <% for (let i = 0; i < entries.length; i++) {%>
+    <p> <a href="/entries/<%=entries[i].id %>"> <%= entries[i].title %></a>
+    <!-- Logic to check if entries were made today-->
+    <% let entryDate = entries[i].date.toLocaleDateString('en-US', options) %>
+    <% let todaysDate = new Date().toLocaleDateString('en-US', options) %>
+    <% if (entryDate === todaysDate) { %> 
+        <br/><span>today at <%= entries[i].date.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'}) %></span></p>
+        <% } else { %> 
+            <br/><span> <%= entries[i].date.toLocaleDateString('en-US', options) %> </span></p>
+            <% } %>
+            <form action="/entries/<%= entries[i].id %>?_method=DELETE" method="POST">
+                <input type="submit" value="DELETE"/>
+            </form>
+
+
+   <% } %>
+</div>
+
+</body>
+</html>
