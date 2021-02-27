@@ -1,0 +1,43 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2% 4%;
+}
+.header {
+  width: 100%;
+  margin-left: 1%;
+}
+.header a {
+  padding-right: 55px;
+}
+.body {
+  display: flex;
+}
+
+.entry {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-left: 1%;
+  width: 100%;
+}
+
+ul {
+  border-bottom: 1px solid black;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.u-pull-right input {
+  border: none;
+  padding-top: 0;
+}
