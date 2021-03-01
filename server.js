@@ -12,6 +12,7 @@ const mongodb_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/' + 'j
 // Controllers
 const entriesController = require('./controllers/entries.js');
 
+
 // Public
 APP.use(express.static('public'))
 // Middleware to help with form submission
