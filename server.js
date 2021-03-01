@@ -33,8 +33,8 @@ mongoose.connection.once('open', () => {
 });
 
 // Get
-APP.get('/entries', (req, res) => {
-    res.render('views/entries/index.ejs')
+APP.get('/', (req, res) => {
+    res.send('Hello world')
 })
 
 
