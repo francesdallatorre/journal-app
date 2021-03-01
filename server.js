@@ -1,12 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+const db = mongoose.connection;
 
 // Configuration
 require('dotenv').config()
 const APP = express();
-const PORT = process.env.PORT
-const mongodbURI = process.env.MONGODBURI || 'mongodb://localhost:27017/' + `journal`;
+const PORT = process.env.PORT || 3000;
+const mongodb_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/' + 'journal';
 
 // Controllers
 const entriesController = require('./controllers/entries.js');
@@ -22,10 +23,11 @@ APP.use(methodOverride('_method'));
 APP.use('/entries', entriesController);
 
 // Mongoose connection
-mongoose.connect(`${mongodbURI}`, {
+mongoose.connect(`${mongodb_URI}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
+
 mongoose.connection.once('open', () => {
     console.log('connected to mongo')
 });
