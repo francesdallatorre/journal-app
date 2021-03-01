@@ -34,9 +34,7 @@ mongoose.connection.once('open', () => {
 });
 
 // Get
-APP.get('/', (req, res) => {
-    res.send('hello world')
-})
+
 
 
 // APP running the server
