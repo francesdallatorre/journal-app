@@ -20,7 +20,7 @@ APP.use(express.urlencoded({ extended: true }));
 APP.use(methodOverride('_method'));
 
 // Register controllers on their routes
-APP.use('/entries', entriesController);
+APP.use('/', entriesController);
 
 // Mongoose connection
 mongoose.connect(`${mongodb_URI}`, {
@@ -31,7 +31,9 @@ mongoose.connection.once('open', () => {
     console.log('connected to mongo')
 });
 
-APP.get('/', entriesController)
+// Get
+
+
 // APP running the server
 APP.listen(PORT, () => {
     console.log('listening on Port: ', PORT)
