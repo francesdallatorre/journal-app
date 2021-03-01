@@ -21,7 +21,7 @@ APP.use(methodOverride('_method'));
 
 
 // Register controllers on their routes
-APP.use('/', entriesController);
+APP.use('/entries', entriesController);
 
 // Mongoose connection
 mongoose.connect(`${mongodb_URI}`, {
@@ -33,7 +33,9 @@ mongoose.connection.once('open', () => {
     console.log('connected to mongo')
 });
 
-
+APP.get('/', (req, res) => {
+    res.sendFile(path.join(`${__dirname}index.ejs`))
+})
 
 
 // APP running the server
