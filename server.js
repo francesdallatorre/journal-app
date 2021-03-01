@@ -21,7 +21,7 @@ APP.use(methodOverride('_method'));
 
 
 // Register controllers on their routes
-APP.use('/entries', entriesController);
+APP.use('/', entriesController);
 
 // Mongoose connection
 mongoose.connect(`${mongodb_URI}`, {
@@ -35,7 +35,7 @@ mongoose.connection.once('open', () => {
 
 // Get
 APP.get('/', (req, res) => {
-    res.render('./views/entries/index.ejs')
+    res.send('hello world')
 })
 
 
