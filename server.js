@@ -33,7 +33,6 @@ mongoose.connection.once('open', () => {
     console.log('connected to mongo')
 });
 
-// Get
 
 
 
