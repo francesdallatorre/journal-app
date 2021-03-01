@@ -34,7 +34,7 @@ mongoose.connection.once('open', () => {
 
 // Get
 APP.get('/', (req, res) => {
-    res.render('/entries/index.ejs')
+    res.render('index.ejs')
 })
 
 
