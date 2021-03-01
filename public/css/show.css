@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap");
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  font-family: "Akaya Telivigala", cursive;
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRitBN7pv9NAvG9Mh61pL5iYScrPsCJTp-6MA&usqp=CAU);
+  display: flex;
+  flex-direction: column;
+}
+a {
+  text-decoration: none;
+}
+.app-name {
+  text-align: center;
+}
+
+.salutation {
+  text-align: right;
+  padding-right: 10%;
+  color: whitesmoke;
+}
+
+.salutation a {
+  color: whitesmoke;
+}
+
+.container {
+  margin-top: 10px;
+  margin-bottom: 10%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-image: url(https://img.freepik.com/free-photo/background-crumpled-paper-sheet_1194-7545.jpg?size=626&ext=jpg);
+  background-size: cover;
+}
+.entry-content {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.entry {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  font-family: "Akaya Telivigala", cursive;
+  font-size: 18px;
+  color: rgb(63, 62, 62);
+}
+
+p {
+  text-align: justify;
+}
+.nav {
+  display: flex;
+  justify-content: center;
+}
+.nav a {
+  margin: 2px;
+}

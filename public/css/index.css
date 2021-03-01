@@ -1,16 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap");
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 2% 4%;
+  background-image: url(https://img.freepik.com/free-photo/background-crumpled-paper-sheet_1194-7545.jpg?size=626&ext=jpg);
+  background-size: cover;
+  font-family: "Akaya Telivigala", cursive;
 }
+
+.app-name {
+  text-align: center;
+}
+
+.salutation {
+  text-align: right;
+  color: rgb(191, 169, 142);
+}
+
+a {
+  text-decoration: none;
+}
+
 .header {
   width: 100%;
   margin-left: 1%;
 }
+
 .header a {
-  padding-right: 55px;
+  padding-right: 40px;
+  text-decoration: none;
 }
+
+/* Entries content*/
+
 .body {
   display: flex;
 }
@@ -22,19 +45,15 @@ body {
   width: 100%;
 }
 
-ul {
-  border-bottom: 1px solid black;
+.entry ul {
+  border-bottom: 1px solid rgb(162, 159, 159);
 }
 
-li {
+.entry li {
   margin: 0;
   padding: 0;
   list-style: none;
   width: 100%;
-}
-
-a {
-  text-decoration: none;
 }
 
 .u-pull-right input {

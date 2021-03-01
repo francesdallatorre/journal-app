@@ -1,0 +1,10 @@
+
+    <!-- logic for date format-->
+
+    <% let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }%>
+
+<div>
+
+    <h6 class="u-pull-right"><%= new Date().toLocaleDateString('en-US', options) %></h6>
+    
+</div>

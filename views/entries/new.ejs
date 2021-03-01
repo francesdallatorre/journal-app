@@ -5,23 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/new.css">
     <title>Journal</title>
 </head>
-<body>
-    <form action="/entries" method="POST">
-        <input type="text" name="title" placeholder="untitled"><br/>
-        <label for="emoji">How do you feel</label>
-        <select id="emoji" name="emoji">
-            <option name="emoji" value="😀">😀</option>
-            <option name="emoji" value="😢">😢</option>
-            <option name="emoji" value="😠">😠</option>
-            <option name="emoji" value="😍">😍</option>
-            <option name="emoji" value="😱">😱</option>
-         </select><br/>
-        <input type="text" name="entry">
-        <input type="submit" value="add">
 
-      
-    </form>
+<body>
+    <% let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }%>
+    <div>
+        <div class="app-name">
+            
+            <h1>J o u r n a l</h1>
+     
+        </div>
+
+    <div class="salutation">
+
+        <h5>Hi Frances!</h5>
+
+        <h5><a href="/entries"><<</a></h5>
+
+    </div>
+
+    </div>
+            
+
+
+ <div class="container">
+
+        <div>
+            <h4>new entry </h4>
+    
+    
+            <h6 class="u-pull-left"><%= new Date().toLocaleDateString('en-US', options) %></h6>
+    
+        </div>
+
+<div class="new">
+            <!-- form-->
+    <form action="/entries" method="POST">
+        
+            <input class="title" type="text" name="title" placeholder="untitled"><br/>
+
+            <select id="emoji" name="emoji">
+                <option name="emoji">Emoji</option>
+                <option name="emoji">😐</option>
+                <option name="emoji">😀</option>
+                <option name="emoji">😢</option>
+                <option name="emoji">😠</option>
+                <option name="emoji">😍</option>
+                <option name="emoji">😱</option>
+            </select>
+
+            <textarea  id="textarea" name="entry"></textarea><br/>
+       
+           <div class="nav">
+
+            <a class="button" href="/entries/"><<</a>
+            <input type="submit" value="add" class="button">
+        
+           </div>
+       
+        </form> <!-- end of form-->
+
+</div>
+
+</div>
+
 </body>
 </html>
