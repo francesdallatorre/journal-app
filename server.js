@@ -32,6 +32,12 @@ mongoose.connection.once('open', () => {
     console.log('connected to mongo')
 });
 
+// Get
+APP.get('/entries', (req, res) => {
+    res.render('index.ejs')
+})
+
+
 // APP running the server
 APP.listen(PORT, () => {
     console.log('listening on Port: ', PORT)
