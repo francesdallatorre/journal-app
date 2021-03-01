@@ -6,7 +6,7 @@ const methodOverride = require('method-override');
 require('dotenv').config()
 const APP = express();
 const PORT = process.env.PORT
-const mongodbURI = process.env.MONGODBURI
+const mongodbURI = process.env.MONGODBURI || 'mongodb://localhost:27017/' + `journal`;
 
 // Controllers
 const entriesController = require('./controllers/entries.js');
