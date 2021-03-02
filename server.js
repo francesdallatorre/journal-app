@@ -38,7 +38,7 @@ APP.use('/users', userController);
 APP.use('/sessions', sessionsController);
 
 APP.get('/', function (req, res) {
-    res.redirect('/entries')
+    res.redirect('/sessions/new')
 })
 
 // Mongoose connection
