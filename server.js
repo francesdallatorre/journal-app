@@ -46,10 +46,6 @@ mongoose.connection.once('open', () => {
     console.log('connected to mongo')
 });
 
-// GET
-APP.get('/', function (req, res) {
-    res.redirect('/entries')
-})
 
 // APP running the server
 APP.listen(PORT, () => {
