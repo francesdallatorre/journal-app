@@ -2,6 +2,10 @@ const { Router } = require('express');
 const express = require('express');
 const ROUTER = express.Router();
 const Entry = require('../models/entries.js');
+const { isAuthenticated } = require('../services/middleware.js');
+
+// Middleware to handle authentication on each route of this controller
+ROUTER.use(isAuthenticated)
 
 // seed
 ROUTER.get('/seed', (req, res) => {
@@ -25,13 +29,16 @@ ROUTER.get('/seed', (req, res) => {
 ROUTER.get('/', (req, res) => {
     Entry.find({}, (error, allEntries) => {
         res.render('entries/index.ejs', {
-            entries: allEntries
+            entries: allEntries,
+            currentUser: req.session.currentUser
         });
     });
 });
 // new
 ROUTER.get('/new/', (req, res) => {
-    res.render('entries/new.ejs')
+    res.render('entries/new.ejs', {
+        currentUser: req.session.currentUser
+    })
 });
 // post
 ROUTER.post('/', (req, res) => {
@@ -43,12 +50,13 @@ ROUTER.post('/', (req, res) => {
 ROUTER.get('/:id/edit', (req, res) => {
     Entry.findById(req.params.id, (error, foundEntry) => {
         res.render('entries/edit.ejs', {
-            entry: foundEntry
+            entry: foundEntry,
+            currentUser: req.session.currentUser
         });
     });
 });
 // update
-ROUTER.put('/:id', (req, res) => {
+ROUTER.put('/:id', isAuthenticated, (req, res) => {
     Entry.findByIdAndUpdate(req.params.id, req.body, { new: true },
         (error, updatedEntry) => {
             res.redirect('/entries')
@@ -58,16 +66,25 @@ ROUTER.put('/:id', (req, res) => {
 ROUTER.get('/:id/', (req, res) => {
     Entry.findById(req.params.id, (error, foundEntry) => {
         res.render('entries/show.ejs', {
-            entry: foundEntry
+            entry: foundEntry,
+            currentUser: req.session.currentUser
         });
     });
 });
 // delete
-ROUTER.delete('/:id/', (req, res) => {
+ROUTER.delete('/:id/', isAuthenticated, (req, res) => {
     Entry.findByIdAndRemove(req.params.id, { useFindAndModify: false },
         (error, data) => {
-            res.redirect('/entries/')
-        });
-});
+            res.redirect('/entries')
+        })
+})
+
+
+
+
+
+
+
+
 
 module.exports = ROUTER
