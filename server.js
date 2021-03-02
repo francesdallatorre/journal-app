@@ -21,9 +21,7 @@ APP.use(methodOverride('_method'));
 
 // Register controllers on their routes
 APP.use('/entries', entriesController);
-APP.get('/', function (req, res) {
-    res.redirect('/entries')
-})
+
 // Mongoose connection
 mongoose.connect(`${mongodb_URI}`, {
     useNewUrlParser: true,
@@ -34,8 +32,9 @@ mongoose.connection.once('open', () => {
 });
 
 // Get
-
-
+APP.get('/', function (req, res) {
+    res.redirect('/entries')
+})
 // APP running the server
 APP.listen(PORT, () => {
     console.log('listening on Port: ', PORT)
