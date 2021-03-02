@@ -37,6 +37,10 @@ APP.use('/entries', entriesController);
 APP.use('/users', userController);
 APP.use('/sessions', sessionsController);
 
+APP.get('/', function (req, res) {
+    res.redirect('/entries')
+})
+
 // Mongoose connection
 mongoose.connect(`${mongodb_URI}`, {
     useNewUrlParser: true,
@@ -46,9 +50,7 @@ mongoose.connection.once('open', () => {
     console.log('connected to mongo')
 });
 
-APP.get('/', (req, res) => {
-    res.redirect('/entries')
-})
+
 
 // APP running the server
 APP.listen(PORT, () => {
