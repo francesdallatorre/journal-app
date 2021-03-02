@@ -20,7 +20,7 @@ APP.use(express.urlencoded({ extended: true }));
 APP.use(methodOverride('_method'));
 
 // Register controllers on their routes
-APP.use('/entries', entriesController);
+APP.use('/', entriesController);
 
 // Mongoose connection
 mongoose.connect(`${mongodb_URI}`, {
