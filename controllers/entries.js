@@ -2,6 +2,7 @@ const { Router } = require('express');
 const express = require('express');
 const ROUTER = express.Router();
 const Entry = require('../models/entries.js');
+const User = require('../models/users.js')
 const { isAuthenticated } = require('../services/middleware.js');
 
 // Middleware to handle authentication on each route of this controller
@@ -44,14 +45,16 @@ ROUTER.get('/new/', (req, res) => {
 ROUTER.post('/', (req, res) => {
     Entry.create(req.body, (error, createdEntry) => {
         res.redirect('/entries')
+        console.log(createdEntry)
     });
 });
+
 // edit
 ROUTER.get('/:id/edit', (req, res) => {
     Entry.findById(req.params.id, (error, foundEntry) => {
         res.render('entries/edit.ejs', {
             entry: foundEntry,
-            currentUser: req.session.currentUser
+            currentUser: req.session.currentUser,
         });
     });
 });
@@ -78,12 +81,6 @@ ROUTER.delete('/:id/', isAuthenticated, (req, res) => {
             res.redirect('/entries')
         })
 })
-
-
-
-
-
-
 
 
 

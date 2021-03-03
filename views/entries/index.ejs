@@ -20,6 +20,7 @@
             <h1>J o u r n al</h1>
      
         </div>
+    
 
     <div class="salutation">
 
@@ -62,10 +63,11 @@
 <div class="body">
 
     <div class="entry">
-      
 
     <% for (let i = 0; i < entries.length; i++) {%>
          
+      
+    <% if (entries[i].userid === currentUser._id) { %>
         <ul>
                <!-- logic to delete an entry-->
 
@@ -94,6 +96,7 @@
 
         </form>
 
+                <% } %>
                 <% } %>
 
             </div>

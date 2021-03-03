@@ -15,6 +15,7 @@ const entriesController = require('./controllers/entries.js');
 const userController = require('./controllers/users.js')
 const sessionsController = require('./controllers/sessions.js')
 
+
 // Public
 APP.use(express.static('public'))
 
@@ -37,6 +38,7 @@ APP.use('/entries', entriesController);
 APP.use('/users', userController);
 APP.use('/sessions', sessionsController);
 
+// GET 
 APP.get('/', function (req, res) {
     res.redirect('/sessions/new')
 })

@@ -5,6 +5,7 @@ const ROUTER = express.Router();
 
 const User = require('../models/users.js')
 
+
 ROUTER.get('/new', (req, res) => {
     res.render('sessions/new.ejs', {
         currentUser: req.session.currentUser
