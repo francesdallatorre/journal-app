@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,68 +11,59 @@
     <title>Journal</title>
 </head>
 
-<body>
+<body>   
+
+     <!-- logic to format the date -->
     <% let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }%>
-    <div>
-        <div class="app-name">
-            
-            <h1>J o u r n a l</h1>
-     
-        </div>
 
-    <div class="salutation">
+    <!-- nav partial-->
+    <%- include ('../partials/nav.ejs') %>  
 
-        <h5>Hi Frances!</h5>
+   <!-- date partial -->
+   <%- include ('../partials/date.ejs') %>
 
-        <h5><a href="/entries"><<</a></h5>
+ <div class="body">
 
-    </div>
-
-    </div>
-            
-
-
- <div class="container">
-
-        <div>
-            <h4>edit entry </h4>
-    
-    
-            <h6 class="u-pull-left"><%= new Date().toLocaleDateString('en-US', options) %></h6>
-    
-        </div>
 
 <div class="new">
-
-            <!-- form-->
-            <form action="/entries/<%=entry.id%>?_method=PUT" method="POST" id="new">
+    
+  <!-- form-->
+  <form action="/entries/<%=entry.id%>?_method=PUT" method="POST" id="new">
         
-            <input class="title" type="text" name="title" value="<%=entry.title%>"><br/>
+    <input id="title" type="text" name="title" value="<%=entry.title.toUpperCase()%>"><br/>
 
-            <select id="emoji" name="emoji">
-                <option name="emoji" value=""><%=entry.emoji%></option>
-                <option name="emoji" value="😐">😐</option>
-                <option name="emoji" value="😀">😀</option>
-                <option name="emoji" value="😢">😢</option>
-                <option name="emoji" value="😠">😠</option>
-                <option name="emoji" value="😍">😍</option>
-                <option name="emoji" value="😱">😱</option>
+    <select id="emoji" name="emoji">
+        <option name="emoji" value=""><%=entry.emoji%></option>
+        <option name="emoji" value="😐">😐</option>
+        <option name="emoji" value="😀">😀</option>
+        <option name="emoji" value="😢">😢</option>
+        <option name="emoji" value="😠">😠</option>
+        <option name="emoji" value="😍">😍</option>
+        <option name="emoji" value="😱">😱</option>
 
-            </select>
+    </select>
 
-            <textarea  name="entry"><%=entry.entry%></textarea><br/>
+    <textarea name="entry"><%=entry.entry%></textarea><br/>
 
-            <div class="nav">
+    <!-- logic to add currentUser id to entries userid-->
 
-                <a class="button" href="/entries/"><<</a>
-                <input type="submit" value="add" class="button">
-            
-               </div>
+    <input style="display:none" type="text" name="userid" value="<%= currentUser._id%>">
 
-        </form> <!-- end of form-->
+    <div class="btn">
+
+        <input type="submit" value="add" class="button">
+        
+    </div>
+
+ 
+
+</form> <!-- end of form-->
 
 </div>
+
 </div>
 
 </body>
 </html>
+
+   

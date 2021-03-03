@@ -4,7 +4,7 @@ body {
   flex-direction: column;
   justify-content: center;
   margin: 2% 4%;
-  background-image: url(https://img.freepik.com/free-photo/background-crumpled-paper-sheet_1194-7545.jpg?size=626&ext=jpg);
+  background: url(https://inspirationhut.net/wp-content/uploads/2014/09/grey-paper-texture.jpg);
   background-size: cover;
   font-family: "Akaya Telivigala", cursive;
 }
@@ -12,10 +12,25 @@ body {
 .app-name {
   text-align: center;
 }
+.title {
+  color: #f2c589;
+  text-align: center;
+  font-size: 50px;
+  background-color: rgb(116, 171, 171);
+  margin: 20px auto;
+  width: 80%;
+  border-radius: 5px;
+}
 
 .salutation {
   text-align: right;
+  padding-right: 10%;
   color: rgb(191, 169, 142);
+}
+
+.salutation input {
+  border: none;
+  padding: 0;
 }
 
 a {
@@ -47,6 +62,9 @@ a {
 
 .entry ul {
   border-bottom: 1px solid rgb(162, 159, 159);
+  border-radius: 5px;
+  background-color: #f4e7d5;
+  padding: 10px;
 }
 
 .entry li {

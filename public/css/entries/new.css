@@ -1,42 +1,55 @@
 @import url("https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap");
 body {
-  margin: 0 auto;
-  width: 100%;
-  font-family: "Akaya Telivigala", cursive;
-  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRitBN7pv9NAvG9Mh61pL5iYScrPsCJTp-6MA&usqp=CAU);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin: 2% 4%;
+  background: url(https://inspirationhut.net/wp-content/uploads/2014/09/grey-paper-texture.jpg);
+  background-size: cover;
+  font-family: "Akaya Telivigala", cursive;
 }
-a {
-  text-decoration: none;
-}
+
 .app-name {
   text-align: center;
+}
+.title {
+  color: #f2c589;
+  text-align: center;
+  font-size: 50px;
+  background-color: rgb(116, 171, 171);
+  margin: 20px auto;
+  width: 80%;
+  border-radius: 5px;
 }
 
 .salutation {
   text-align: right;
   padding-right: 10%;
-  color: whitesmoke;
+  color: rgb(191, 169, 142);
 }
-
+.salutation input {
+  border: none;
+  padding: 0;
+  text-align: right;
+  color: rgb(191, 169, 142);
+}
 .salutation a {
-  color: whitesmoke;
+  color: rgb(191, 169, 142);
 }
+/* content*/
 
-.container {
+.body {
   margin-top: 10px;
   margin-bottom: 10%;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  background-image: url(https://img.freepik.com/free-photo/background-crumpled-paper-sheet_1194-7545.jpg?size=626&ext=jpg);
+  background: transparent;
   background-size: cover;
 }
 
 .new {
   margin-top: 20px;
-
   width: 100%;
   display: flex;
   justify-content: center;
@@ -60,20 +73,34 @@ form {
   justify-content: center;
   flex-direction: column;
 }
-.title {
+#title {
   width: 50%;
   border: none;
   margin: 0;
+  background-color: transparent;
 }
 
 #emoji {
   width: 80px;
   margin-bottom: 10px;
+  background-color: transparent;
+  border: none;
 }
-
+.entry-content {
+  width: 100%;
+  min-height: 300px;
+  max-height: fit-content;
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  font-family: "Akaya Telivigala", cursive;
+  font-size: 18px;
+  color: rgb(63, 62, 62);
+}
 textarea {
   width: 100%;
-  min-height: 400px;
+  min-height: 300px;
   max-height: fit-content;
   border: none;
   background-color: transparent;
@@ -86,8 +113,9 @@ textarea {
 
 .button {
   width: 100px;
-  margin: 0 auto;
+  margin: 0;
 }
-.nav {
-  margin: 0 auto;
+.btn {
+  display: flex;
+  justify-content: center;
 }
