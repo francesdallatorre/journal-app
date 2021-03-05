@@ -3,12 +3,16 @@
 ## Overview
 
 Journal is a web app built to keep track of your daily entries. You use it by creating an account and writing down daily entries.
+### Technologies
 
 - **Express**
 - **MongoDB**
 - **Mongoose**
 - **Node.js**
 - **EJS**
+
+### Styles
+- **Skeleton & Normalize **
 
 ## Server API Requests
 
