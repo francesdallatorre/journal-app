@@ -82,7 +82,6 @@ Journal is a full-stack application built to keep track of your daily entries. Y
 ## Stretch Goals
 
 - Uploading images from library and Camera access
-- Gallery
 - Calendar (interactive)
 - Inspirational Quote of the day (API)
 
