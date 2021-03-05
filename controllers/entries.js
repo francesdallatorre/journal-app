@@ -35,6 +35,15 @@ ROUTER.get('/', (req, res) => {
         });
     });
 });
+// gallery
+ROUTER.get('/gallery', (req, res) => {
+    Entry.find({}, (error, allEntries) => {
+        res.render('entries/gallery.ejs', {
+            entries: allEntries,
+            currentUser: req.session.currentUser
+        });
+    });
+})
 // new
 ROUTER.get('/new/', (req, res) => {
     res.render('entries/new.ejs', {

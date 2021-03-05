@@ -119,3 +119,24 @@ textarea {
   display: flex;
   justify-content: center;
 }
+#image {
+  width: 200px;
+  background: transparent;
+  margin-bottom: 10px;
+}
+
+img {
+  height: 300px;
+  width: 300px;
+  padding: 5px;
+  border: 3px solid rgb(191, 169, 142);
+  margin: 3px;
+}
+
+.gallery {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}

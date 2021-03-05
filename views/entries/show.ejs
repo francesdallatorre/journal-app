@@ -35,6 +35,16 @@
 <%}%>
     <p class="entry"><%= entry.entry %></p>
 
+    <div class="image">
+        
+        <% if (entry.image === "") {%>
+            <img style="display:none" src="<%=entry.image%>">
+       <% } else { %>
+        <img src="<%=entry.image%>">
+        <% } %>
+    </div>
+
+
 <div class="btn">
 
     <a  class="button" href="/entries/<%=entry.id%>/edit">edit</a>
