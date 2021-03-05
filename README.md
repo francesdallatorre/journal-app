@@ -1,4 +1,4 @@
-# Journal app
+# Journal
 
 ## Overview
 
