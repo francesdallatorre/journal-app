@@ -12,7 +12,11 @@ Journal is a web app built to keep track of your daily entries. You use it by cr
 - **EJS**
 
 ### Styles
+
 - **Skeleton & Normalize **
+
+### Illustrations
+- **undraw.co**
 
 ## Server API Requests
 
@@ -66,6 +70,13 @@ Journal is a web app built to keep track of your daily entries. You use it by cr
 ## Example Entry Collection
 
 ![Entry Example](/public/css/images/collection.png)
+
+## Stretch Goals
+
+- Uploading images from library and Camera access
+- Gallery
+- Calendar (interactive)
+- Inspirational Quote of the day (API)
 
 ## Setup
 
