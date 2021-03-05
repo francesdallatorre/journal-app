@@ -13,7 +13,7 @@ Journal is a web app built to keep track of your daily entries. You use it by cr
 
 ### Styles
 
-- **Skeleton & Normalize **
+- **Skeleton & Normalize**
 
 ### Illustrations
 - **undraw.co**
