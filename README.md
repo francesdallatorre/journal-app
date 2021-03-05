@@ -2,14 +2,22 @@
 
 ## Overview
 
-Journal is a web app built to keep track of your daily entries. You use it by creating an account and writing down daily entries.
+Journal is a full-stack application built to keep track of your daily entries. You use it by creating an account and writing down daily entries.
+
 ### Technologies
 
-- **Express**
-- **MongoDB**
-- **Mongoose**
 - **Node.js**
+- **Mongoose**
+- **Express**
 - **EJS**
+
+### Features
+
+- **MVC Structure**
+- **Full CRUD | 7 RESTful routes**
+- **Partials**
+- **Sign up / Log in functionality**
+- **One to many model relationship**
 
 ### Styles
 
