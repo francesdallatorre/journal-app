@@ -61,7 +61,7 @@ Journal is a web app built to keep track of your daily entries. You use it by cr
 
 ## Example Entry Collection
 
-![Entry Example]('/public/css/images/collection.png')
+![Entry Example](/public/css/images/collection.png)
 
 ## Setup
 
