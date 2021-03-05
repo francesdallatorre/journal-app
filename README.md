@@ -87,7 +87,7 @@ Journal is a web app built to keep track of your daily entries. You use it by cr
 
 ## Available build commands
 
-Open [http://localhost:3000](http://localhost:3000) to view your local Express APP in the browser. The page will reload if you make edits.
+Open [http://localhost:3000](http://localhost:3000) to view your local app in the browser. The page will reload if you make edits.
 
 ## To deploy
 
